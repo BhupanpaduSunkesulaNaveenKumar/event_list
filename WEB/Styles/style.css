@@ -1,0 +1,93 @@
+/* styles.css with Light/Dark Theme */
+
+:root {
+    --bg-color: #f8f9fa;
+    --text-color: #333;
+    --card-bg: #fff;
+    --footer-bg: #167ce2;
+    --link-color: #ffc107;
+    --hero-bg: linear-gradient(to right, #007bff, #0056b3);
+}
+
+body.dark-mode {
+    --bg-color: #121212;
+    --text-color: #f1f1f1;
+    --card-bg: #1e1e1e;
+    --footer-bg: #125df4;
+    --link-color: #ffcc00;
+    --hero-bg: linear-gradient(to right, #222, #000);
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Segoe UI', sans-serif;
+    line-height: 1.6;
+}
+
+section.bg-primary {
+    background: var(--hero-bg) !important;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.card-title {
+    color: #007bff;
+    font-weight: bold;
+}
+
+.card-text {
+    color: var(--text-color);
+}
+
+footer {
+    background: var(--footer-bg);
+    color: var(--text-color);
+    padding: 20px 0;
+    font-size: 0.95rem;
+}
+
+footer a {
+    color: var(--link-color);
+    margin: 0 5px;
+    font-size: 1.2rem;
+}
+
+footer a:hover {
+    color: rgb(238, 236, 236);
+}
+
+/* Toggle Button */
+.toggle-mode {
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.toggle-mode input {
+    width: 50px;
+    height: 24px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    .card img {
+        height: 150px;
+    }
+
+    section h1 {
+        font-size: 2rem;
+    }
+}

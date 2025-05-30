@@ -1,0 +1,126 @@
+body {
+    background: linear-gradient(135deg, #dcd7e2, #2575fc);
+    color: white;
+    font-family: 'Arial', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Animated Gradient Blobs */
+.blob {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    filter: blur(70px);
+    opacity: 0.6;
+    animation: blobFloat 15s ease-in-out infinite alternate;
+    z-index: 0;
+}
+
+.blob:nth-child(1) {
+    background: #e7ddde;
+    top: -80px;
+    left: -100px;
+}
+
+.blob:nth-child(2) {
+    background: #d8d8e6;
+    bottom: -80px;
+    right: -100px;
+    animation-delay: 3s;
+}
+
+@keyframes blobFloat {
+    0% {
+        transform: translateY(0px) scale(1);
+    }
+    50% {
+        transform: translateY(30px) scale(1.1);
+    }
+    100% {
+        transform: translateY(-20px) scale(0.95);
+    }
+}
+
+/* Glassy Form Container */
+.container {
+    margin-top: 80px;
+    background: rgba(255, 255, 255, 0.15);
+    color: black;
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 600px;
+    backdrop-filter: blur(15px);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Unique highlight effect using a subtle animated glowing border */
+.container::before {
+    content: "";
+    position: absolute;
+    top: -5px; left: -5px; right: -5px; bottom: -5px;
+    border-radius: 20px;
+    background: linear-gradient(270deg, #e2e0e5, #0b5bdd, #dbd9de);
+    background-size: 600% 600%;
+    animation: glowingBorder 10s linear infinite;
+    filter: blur(8px);
+    opacity: 0.7;
+    z-index: -1;
+}
+
+.container:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 20px rgba(218, 222, 228, 0.6);
+}
+
+@keyframes glowingBorder {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+
+/* Heading */
+h2 {
+    color: #343a40;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Button Style */
+.btn-custom {
+    background-color: #007bff;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.btn-custom:hover {
+    background-color: #0056b3;
+    transform: scale(1.08);
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
